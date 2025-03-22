@@ -7,7 +7,6 @@
     
     <!-- CSS commun -->
     <link rel="stylesheet" href="view/top/static/css/base.css">
-    <link rel="stylesheet" href="view/top/static/css/style.css">
     <link rel="stylesheet" href="view/top/static/css/reservation.css">
 <style>
     /* Add responsive image handling */
@@ -71,12 +70,20 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="index.php" class="btn-reservation">Acceuil</a>
+                <a href="index.php" class="btn-reservation">Accueil</a>
             </div>
         </nav>
     </header>
 
     <main>
+    <img id="img-chat" src="view/top/static/media/RayDark.png" alt="">
+    <div id="chat-container">
+    <div id="chat-box"></div>
+    <div style="display: flex;">
+        <input type="text" id="user-input" placeholder="Tapez votre message...">
+        <button onclick="sendMessage()">➤</button>
+    </div>
+    </div>
     </main>
 
 <footer id="contact">

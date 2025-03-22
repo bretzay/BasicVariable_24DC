@@ -174,7 +174,7 @@ function showNetworkStatus(message, type) {
             chatControls.style.display = "flex";
             toggleButton.textContent = "−";
         } else {
-            //img.src = "view/top/static/media/VraiRayDark.png"
+            //img.src = "view/top/static/media/VraiRayDarkCut.png"
             img.style.bottom = "65px";
             chatContainer.style.height = "40px";
             chatBox.style.display = "none";
