@@ -161,11 +161,11 @@
 
 
 <div id="chat-container">
-    <button id="toggle-chat" onclick="toggleChat()">−</button>
+    <button class="button" id="toggle-chat" onclick="toggleChat()">−</button>
     <div id="chat-box"></div>
     <div id="chat-controls">
         <input type="text" id="user-input" placeholder="Tapez votre message...">
-        <button onclick="sendMessage()">➤</button>
+        <button class="button" onclick="sendMessage()">➤</button>
     </div>
 </div>
 
