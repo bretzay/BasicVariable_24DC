@@ -202,6 +202,7 @@
 
     <!-- JavaScript commun -->
     <script src="view/top/static/js/base.js"></script>
+    <script src="view/top/static/js/menuBurger.js"></script>
     
 </body>
 </html>

@@ -69,7 +69,7 @@
                     <img src="view/top/static/media/logo.png" alt="Logo Hôtel California">
                 </a>
             </div>
-            <div class="nav-links">
+            <div >
                 <a href="index.php" class="btn-reservation">Accueil</a>
             </div>
         </nav>
