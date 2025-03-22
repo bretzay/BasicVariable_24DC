@@ -158,10 +158,14 @@
     </ul>
     <p>Notre concierge se fera un plaisir de personnaliser votre programme selon vos envies et vos centres d&#x27;intérêt.</p>
 </section>
+
+
 <div id="chat-container">
     <div id="chat-box"></div>
-    <input type="text" id="user-input" placeholder="Tapez votre message...">
-    <button onclick="sendMessage()">Envoyer</button>
+    <div style="display: flex;">
+        <input type="text" id="user-input" placeholder="Tapez votre message...">
+        <button onclick="sendMessage()">➤</button>
+    </div>
 </div>
 
 <footer id="contact">

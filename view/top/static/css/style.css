@@ -159,6 +159,63 @@ section {
 .hidden {
     display: none;
 }
-#chat-container{
-    position: sticky;
+#chat-container {   
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 320px;
+    height: 400px;
+    background: #4caf50;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Zone de messages */
+#chat-box {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 5px;
+    overflow-y: auto;
+    background: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Champ de texte et bouton */
+#user-input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    border: none;
+    border-bottom-left-radius: 15px;
+    outline: none;
+}
+
+button {
+    width: 60px;
+    border: none;
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom-right-radius: 15px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
