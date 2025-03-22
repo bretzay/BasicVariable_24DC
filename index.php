@@ -76,7 +76,6 @@
                 <a class="intern-links" href="#spa">Spa</a>
                 <a class="intern-links" href="#activities">Activités</a>
                 <a class="intern-links" href="#contact">Contact</a>
-                <a class="intern-links btn-reservation" href="/user_home/">Réserver</a>
                 <a href="reservation.php" class="intern-links btn-reservation">Réserver</a>
             </div>
             <div></div>
