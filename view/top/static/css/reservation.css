@@ -1,0 +1,11 @@
+main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% de la hauteur de la fenêtre */
+    min-width: 100%; /* Assurez-vous que le main prend toute la largeur */
+    margin: 0;
+    background-image: url("../media/background.png");
+    background-size: cover; /* Ajuste l'image pour qu'elle remplisse tout l'espace */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition */
+}

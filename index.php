@@ -75,7 +75,7 @@
                 <a href="#spa">Spa</a>
                 <a href="#activities">Activités</a>
                 <a href="#contact">Contact</a>
-                <a href="/user_home/" class="btn-reservation">Réserver</a>
+                <a href="reservation.php" class="btn-reservation">Réserver</a>
             </div>
         </nav>
     </header>
