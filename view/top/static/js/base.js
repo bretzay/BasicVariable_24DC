@@ -146,7 +146,24 @@ function showNetworkStatus(message, type) {
             chatBox.appendChild(message);
             input.value = "";
             chatBox.scrollTop = chatBox.scrollHeight;
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: input.value })
+            })
+            .then(response => response.json()) // Traiter la réponse du serveur
+            .then(data => {
+                console.log('Réponse du serveur:', data);
+                // Ici, vous pourriez ajouter des actions supplémentaires si nécessaire, 
+                // comme afficher une réponse automatique du serveur dans la boîte de chat.
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
         }
+
     }
 
     function toggleChat() {
