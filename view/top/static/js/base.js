@@ -134,6 +134,7 @@ function showNetworkStatus(message, type) {
         let input = document.getElementById("user-input");
         let chatBox = document.getElementById("chat-box");
 
+
         if (input.value.trim() !== "") {
             let message = document.createElement("div");
             message.textContent = input.value;
@@ -172,3 +173,9 @@ function showNetworkStatus(message, type) {
         }
         isMinimized = !isMinimized;
     }
+
+    document.getElementById("user-input").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();  // Appelle la fonction sendMessage() lorsque "Enter" est pressé
+        }
+    });

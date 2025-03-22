@@ -169,7 +169,7 @@
         <div id="chat-box"></div>
         <div id="chat-controls">
             <input type="text" id="user-input" placeholder="Tapez votre message...">
-            <button class="button" onclick="sendMessage()">➤</button>
+            <button id="message" class="button" onclick="sendMessage()">➤</button>
         </div>
     </div>
 </div>
