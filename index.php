@@ -69,14 +69,16 @@
                     <img src="view/top/static/media/logo.png" alt="Logo Hôtel California">
                 </a>
             </div>
+        
             <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#restaurants">Restaurants</a>
-                <a href="#spa">Spa</a>
-                <a href="#activities">Activités</a>
-                <a href="#contact">Contact</a>
-                <a href="/user_home/" class="btn-reservation">Réserver</a>
+                <a class="intern-links" href="#services">Services</a>
+                <a class="intern-links" href="#restaurants">Restaurants</a>
+                <a class="intern-links" href="#spa">Spa</a>
+                <a class="intern-links" href="#activities">Activités</a>
+                <a class="intern-links" href="#contact">Contact</a>
+                <a class="intern-links btn-reservation" href="/user_home/">Réserver</a>
             </div>
+            <div></div>
         </nav>
     </header>
 
@@ -169,6 +171,8 @@
     </div>
 </div>
 
+</main>
+
 <footer id="contact">
     
     
@@ -191,7 +195,7 @@
     <p>&copy; 2025 Hôtel California. Tous droits réservés.</p>
 </footer>
 
-    </main>
+    
 
     <!-- JavaScript commun -->
     <script src="view/top/static/js/base.js"></script>

@@ -33,13 +33,13 @@ html, body {
     top: 0;
     z-index: 1000;
     background: var(--background-dark);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); 
 }
 
 .main-nav {
     display: flex;
+    align-items:start;
     justify-content: space-between;
-    align-items: center;
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -134,7 +134,34 @@ main {
     border: 0;
 }
 
+.mobile-menu-button {
+    background: none; /* Supprime l'arrière-plan */
+    border: none; /* Supprime la bordure */
+    cursor: pointer;
+    font-size: 24px;
+    color: white; /* Change la couleur du texte si nécessaire */
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 1000;
+    padding: 5px; /* Ajuste l’espace cliquable */
+}
+
 /* Media Queries */
+@media (min-width: 900px) {
+    .mobile-menu-button{
+        display: none;
+    }
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
     .main-nav {
         padding: 1rem;
@@ -148,9 +175,20 @@ main {
         height: 40px;
     }
 }
-
 @media (max-width: 480px) {
     .nav-links {
-        display: none; /* À remplacer par un menu hamburger */
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .intern-links{
+        height: 100%;
+    }
+
+    .mobile-menu-button.active~.nav-links{
+        display: flex;
+        
+
     }
 }
