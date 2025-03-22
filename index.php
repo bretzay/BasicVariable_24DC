@@ -70,11 +70,11 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="/#services">Services</a>
-                <a href="/#restaurants">Restaurants</a>
-                <a href="/#spa">Spa</a>
-                <a href="/#activities">Activités</a>
-                <a href="/#contact">Contact</a>
+                <a href="#services">Services</a>
+                <a href="#restaurants">Restaurants</a>
+                <a href="#spa">Spa</a>
+                <a href="#activities">Activités</a>
+                <a href="#contact">Contact</a>
                 <a href="/user_home/" class="btn-reservation">Réserver</a>
             </div>
         </nav>
