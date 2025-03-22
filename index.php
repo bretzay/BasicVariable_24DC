@@ -77,6 +77,7 @@
                 <a class="intern-links" href="#activities">Activités</a>
                 <a class="intern-links" href="#contact">Contact</a>
                 <a class="intern-links btn-reservation" href="/user_home/">Réserver</a>
+                <a href="reservation.php" class="intern-links btn-reservation">Réserver</a>
             </div>
             <div></div>
         </nav>
@@ -161,13 +162,16 @@
     <p>Notre concierge se fera un plaisir de personnaliser votre programme selon vos envies et vos centres d&#x27;intérêt.</p>
 </section>
 
-
-<div id="chat-container">
-    <button class="button" id="toggle-chat" onclick="toggleChat()">−</button>
-    <div id="chat-box"></div>
-    <div id="chat-controls">
-        <input type="text" id="user-input" placeholder="Tapez votre message...">
-        <button class="button" onclick="sendMessage()">➤</button>
+<div id="box-container">
+    <img id="img-chat" src="view/top/static/media/RayDarkCut.png" alt="">
+    <div id="chat-container">
+        
+        <button class="button" id="toggle-chat" onclick="toggleChat()">+</button>
+        <div id="chat-box"></div>
+        <div id="chat-controls">
+            <input type="text" id="user-input" placeholder="Tapez votre message...">
+            <button class="button" onclick="sendMessage()">➤</button>
+        </div>
     </div>
 </div>
 

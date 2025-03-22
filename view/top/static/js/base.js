@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Animation du menu mobile
-    const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.className = 'mobile-menu-button';
-    mobileMenuButton.textContent = "☰"; // Par défaut, menu hamburger
+    // const mobileMenuButton = document.createElement('button');
+    // mobileMenuButton.className = 'mobile-menu-button';
+    // mobileMenuButton.innerHTML = '<span></span><span></span><span></span>';
     
     const nav = document.querySelector('.nav-links');
     const headerContainer = document.querySelector('.main-nav');
@@ -144,7 +144,7 @@ function showNetworkStatus(message, type) {
         statusDiv.remove();
     }, 3000);
 }
-    let isMinimized = false;
+    let isMinimized = true; // Par défaut, chatbox fermée
 
     function sendMessage() {
         let input = document.getElementById("user-input");
@@ -165,17 +165,22 @@ function showNetworkStatus(message, type) {
     }
 
     function toggleChat() {
+        let img = document.getElementById("img-chat");
         let chatContainer = document.getElementById("chat-container");
         let chatBox = document.getElementById("chat-box");
         let chatControls = document.getElementById("chat-controls");
         let toggleButton = document.getElementById("toggle-chat");
 
         if (isMinimized) {
+            //img.src = "view/top/static/media/VraiRayDarkCut.png"
+            img.style.bottom = "425px";
             chatContainer.style.height = "400px";
             chatBox.style.display = "block";
             chatControls.style.display = "flex";
             toggleButton.textContent = "−";
         } else {
+            //img.src = "view/top/static/media/VraiRayDarkCut.png"
+            img.style.bottom = "65px";
             chatContainer.style.height = "40px";
             chatBox.style.display = "none";
             chatControls.style.display = "none";
