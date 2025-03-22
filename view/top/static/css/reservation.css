@@ -167,7 +167,6 @@ section {
     border-radius: 25px;
     text-shadow: none !important;
     transition: transform 0.3s ease;
-    margin-right: 10px;
 }
 
 .btn-reservation:hover {
@@ -250,6 +249,27 @@ button:hover {
 #img-chat{
     position: absolute;
     top: 25%;
-    left: 15%;
+    left: 10%;
+    height: 75%;
     
+}
+#img-chat-cut{
+    display: none;
+}
+@media (max-width: 480px) {
+    #img-chat{
+        display: none;
+    }
+    #img-chat-cut{
+        display: block;
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        height: auto;
+    }
+    #chat-container{
+        left: 15%;
+        width: 70%;
+        top: 35%;
+    }
 }

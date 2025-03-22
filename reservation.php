@@ -77,6 +77,7 @@
 
     <main>
     <img id="img-chat" src="view/top/static/media/RayDark.png" alt="">
+    <img id="img-chat-cut" src="view/top/static/media/RayDarkCut.png" alt="">
     <div id="chat-container">
     <div id="chat-box"></div>
     <div style="display: flex;">
