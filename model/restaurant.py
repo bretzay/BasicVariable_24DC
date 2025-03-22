@@ -9,9 +9,9 @@ class Restaurant:
         self.is_active = is_active
 
     def __str__(self) -> str:
-        return f"{self.name} (ID: {self.id}) - {self.description}, \
-            Capacité: {self.capacity}\n\
-            Horraires: {self.opening_hours}\n\
-            Emplacement: {self.location}\n\
-            Ouvert: {self.is_active}"
+        return f"{self.name} (ID: {self.id}) - {self.description}, \n\
+Capacité: {self.capacity}\n\
+Horraires: {self.opening_hours}\n\
+Emplacement: {self.location}\n\
+Ouvert: {self.is_active}"
 
