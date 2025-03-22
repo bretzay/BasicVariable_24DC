@@ -165,7 +165,7 @@ section {
     right: 25px;
     width: 320px;
     height: 40px; /* Fermé par défaut */
-    background: #4caf50;        
+    background: #553228;        
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -180,7 +180,7 @@ section {
     flex: 1;
     padding: 10px;
     overflow-y: auto;
-    background: white;
+    background: #A09677;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     display: none;
@@ -190,7 +190,7 @@ section {
 #chat-controls {
     display: none; /* Caché par défaut */
     align-items: center;
-    background: white;
+    background: #A09677;
     padding: 5px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -205,8 +205,8 @@ section {
 
 .button {
     border: none;
-    background: #4caf50;
-    color: white;
+    background: #553228;
+    color: #A09677;
     padding: 10px;
     cursor: pointer;
     transition: 0.3s;
@@ -214,7 +214,7 @@ section {
 }
 
 .button:hover {
-    background: #45a049;
+    background: #553228;
 }
 
 /* Bouton de minimisation */
@@ -222,9 +222,9 @@ section {
     position: absolute;
     top: 5px;
     right: 5px;
-    background: #66e86a;
-    color: black;
-    border: solid 1px black;
+    background: #A09677;
+    color: #553228;
+    border: solid 1px #553228;
     padding: 5px 10px;
     border-radius: 50%;
     cursor: pointer;
