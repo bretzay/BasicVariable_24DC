@@ -139,3 +139,42 @@ function showNetworkStatus(message, type) {
         statusDiv.remove();
     }, 3000);
 }
+    let isMinimized = false;
+
+    function sendMessage() {
+        let input = document.getElementById("user-input");
+        let chatBox = document.getElementById("chat-box");
+
+        if (input.value.trim() !== "") {
+            let message = document.createElement("div");
+            message.textContent = input.value;
+            message.style.padding = "10px";
+            message.style.margin = "5px";
+            message.style.background = "#e0e0e0";
+            message.style.borderRadius = "10px";
+            message.style.textAlign = "right";
+            chatBox.appendChild(message);
+            input.value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    }
+
+    function toggleChat() {
+        let chatContainer = document.getElementById("chat-container");
+        let chatBox = document.getElementById("chat-box");
+        let chatControls = document.getElementById("chat-controls");
+        let toggleButton = document.getElementById("toggle-chat");
+
+        if (isMinimized) {
+            chatContainer.style.height = "400px";
+            chatBox.style.display = "block";
+            chatControls.style.display = "flex";
+            toggleButton.textContent = "−";
+        } else {
+            chatContainer.style.height = "40px";
+            chatBox.style.display = "none";
+            chatControls.style.display = "none";
+            toggleButton.textContent = "+";
+        }
+        isMinimized = !isMinimized;
+    }

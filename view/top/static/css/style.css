@@ -159,7 +159,7 @@ section {
 .hidden {
     display: none;
 }
-#chat-container {   
+#chat-container {
     position: fixed;
     bottom: 25px;
     right: 25px;
@@ -172,13 +172,14 @@ section {
     flex-direction: column;
     overflow: hidden;
     animation: fadeIn 0.5s ease-in-out;
+    transition: height 0.3s ease-in-out;
 }
 
 /* Zone de messages */
 #chat-box {
+    margin-bottom: 5px;
     flex: 1;
     padding: 10px;
-    margin-bottom: 5px;
     overflow-y: auto;
     background: white;
     border-top-left-radius: 15px;
@@ -186,26 +187,48 @@ section {
 }
 
 /* Champ de texte et bouton */
+#chat-controls {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
 #user-input {
-    width: calc(100% - 60px);
+    flex: 1;
     padding: 10px;
     border: none;
-    border-bottom-left-radius: 15px;
     outline: none;
 }
 
 button {
-    width: 60px;
     border: none;
     background: #4caf50;
     color: white;
+    padding: 10px;
     cursor: pointer;
     transition: 0.3s;
-    border-bottom-right-radius: 15px;
+    border-radius: 5px;
 }
 
 button:hover {
     background: #45a049;
+}
+
+/* Bouton de minimisation */
+#toggle-chat {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* Animation d'apparition */
