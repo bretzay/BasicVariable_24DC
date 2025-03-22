@@ -159,3 +159,6 @@ section {
 .hidden {
     display: none;
 }
+#chat-container{
+    position: sticky;
+}
