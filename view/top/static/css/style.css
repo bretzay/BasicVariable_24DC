@@ -164,18 +164,17 @@ section {
     bottom: 25px;
     right: 25px;
     width: 320px;
-    height: 400px;
-    background: #4caf50;
+    height: 40px; /* Fermé par défaut */
+    background: #4caf50;        
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    animation: fadeIn 0.5s ease-in-out;
     transition: height 0.3s ease-in-out;
 }
 
-/* Zone de messages */
+/* Zone de messages (cachée au départ) */
 #chat-box {
     margin-bottom: 5px;
     flex: 1;
@@ -184,11 +183,12 @@ section {
     background: white;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    display: none;
 }
 
-/* Champ de texte et bouton */
+/* Zone de saisie */
 #chat-controls {
-    display: flex;
+    display: none; /* Caché par défaut */
     align-items: center;
     background: white;
     padding: 5px;
@@ -222,9 +222,9 @@ section {
     position: absolute;
     top: 5px;
     right: 5px;
-    background: rgba(255, 255, 255, 0.8);
+    background: #66e86a;
     color: black;
-    border: none;
+    border: solid 1px black;
     padding: 5px 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -241,4 +241,14 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
+}
+#box-container{
+    height: 280px;
+}
+#img-chat{
+    position: fixed;
+    bottom: 65px;
+    right: 20px;
+    
+    transition: bottom  0.3s ease-in-out;
 }
