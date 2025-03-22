@@ -1,13 +1,16 @@
 # presenters/restaurant_presenter.py
 import requests
-from models.restaurant import Restaurant
+from model.restaurant import Restaurant
 from dotenv import load_dotenv
 import os
 
 # Load API key from .env
 load_dotenv()
-BASE_URL = "http://hotel-api.example.com"  # Replace with real URL from hackathon
+BASE_URL = os.getenv("HOTEL_BASE_URL")  # Replace with real URL from hackathon
 API_KEY = os.getenv("HOTEL_API_KEY")  # Ensure this is set in .env
+
+
+
 
 def get_all_restaurants(page: int = 1) -> list[Restaurant]:
     """
@@ -19,9 +22,9 @@ def get_all_restaurants(page: int = 1) -> list[Restaurant]:
     Raises:
         requests.HTTPError: If the API call fails.
     """
-    headers = {"Authorization": f"Bearer {API_KEY}"}
+    headers = {"Authorization": f"Token {API_KEY}"}
     params = {"page": page} if page > 1 else {}  # Only add page param if needed
-    response = requests.get(f"{BASE_URL}/api/restaurants/", headers=headers, params=params)
+    response = requests.get(f"{BASE_URL}/restaurants/", headers=headers, params=params)
     response.raise_for_status()  # Raise exception on 4xx/5xx errors
     
     data = response.json()
@@ -30,7 +33,7 @@ def get_all_restaurants(page: int = 1) -> list[Restaurant]:
 
 # Optional: Function to handle pagination metadata if needed later
 def get_restaurants_paginated(page: int = 1) -> tuple[list[Restaurant], int, str, str]:
-    headers = {"Authorization": f"Bearer {API_KEY}"}
+    headers = {"Authorization": f"Token {API_KEY}"}
     params = {"page": page} if page > 1 else {}
     response = requests.get(f"{BASE_URL}/api/restaurants/", headers=headers, params=params)
     response.raise_for_status()
