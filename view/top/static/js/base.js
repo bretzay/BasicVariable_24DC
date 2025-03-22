@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Animation du menu mobile
-    const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.className = 'mobile-menu-button';
-    mobileMenuButton.innerHTML = '<span></span><span></span><span></span>';
+    // const mobileMenuButton = document.createElement('button');
+    // mobileMenuButton.className = 'mobile-menu-button';
+    // mobileMenuButton.innerHTML = '<span></span><span></span><span></span>';
     
     const nav = document.querySelector('.nav-links');
     const headerContainer = document.querySelector('.main-nav');
