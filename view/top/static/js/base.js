@@ -146,10 +146,11 @@ function showNetworkStatus(message, type) {
             chatBox.appendChild(message);
             input.value = "";
             chatBox.scrollTop = chatBox.scrollHeight;
+
             fetch('/send_message', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': '../../main.py'
                 },
                 body: JSON.stringify({ message: input.value })
             })
