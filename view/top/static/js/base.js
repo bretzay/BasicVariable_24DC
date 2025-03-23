@@ -149,8 +149,13 @@ function showNetworkStatus(message, type) {
         // Afficher immédiatement le message de l'utilisateur
         const userMessage = document.createElement('div');
         userMessage.textContent = `Vous : ${message}`;
-        userMessage.style.color = "blue"; // Optionnel : pour différencier
+        userMessage.style.padding = "10px";
+        userMessage.style.margin = "5px";
+        userMessage.style.background = "#e0e0e0";
+        userMessage.style.borderRadius = "10px";
+        userMessage.style.textAlign = "right";
         chatBox.appendChild(userMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
     
         fetch('/send_message', {
             method: 'POST',
@@ -171,7 +176,11 @@ function showNetworkStatus(message, type) {
             // Afficher la réponse du chatbot
             const botMessage = document.createElement('div');
             botMessage.textContent = `Chatbot: ${data.response}`;
-            botMessage.style.color = "green"; // Optionnel : pour différencier
+            botMessage.style.padding = "10px";
+            botMessage.style.margin = "5px";
+            botMessage.style.background = "#e0e0e0";
+            botMessage.style.borderRadius = "10px";
+            botMessage.style.textAlign = "left";
             chatBox.appendChild(botMessage);
         })
         .catch(error => {
