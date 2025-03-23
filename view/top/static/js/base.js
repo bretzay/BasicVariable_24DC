@@ -157,8 +157,12 @@ function showNetworkStatus(message, type) {
             .then(response => response.json()) // Traiter la réponse du serveur
             .then(data => {
                 console.log('Réponse du serveur:', data);
-                // Ici, vous pourriez ajouter des actions supplémentaires si nécessaire, 
-                // comme afficher une réponse automatique du serveur dans la boîte de chat.
+                const chatBox = document.getElementById('chatBox'); // Assurez-vous que cet élément existe
+        if (chatBox) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = `Chatbot: ${data.response}`;
+            chatBox.appendChild(messageElement);
+        }
             })
             .catch(error => {
                 console.error('Erreur:', error);
@@ -197,3 +201,5 @@ function showNetworkStatus(message, type) {
             sendMessage();  // Appelle la fonction sendMessage() lorsque "Enter" est pressé
         }
     });
+
+    
