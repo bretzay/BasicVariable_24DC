@@ -131,51 +131,61 @@ function showNetworkStatus(message, type) {
     let isMinimized = true; // Par défaut, chatbox fermée
 
     function sendMessage() {
-        let input = document.getElementById("user-input");
-        let chatBox = document.getElementById("chat-box");
-
-
-        if (input.value.trim() !== "") {
-            let message = document.createElement("div");
-            message.textContent = input.value;
-            message.style.padding = "10px";
-            message.style.margin = "5px";
-            message.style.background = "#e0e0e0";
-            message.style.borderRadius = "10px";
-            message.style.textAlign = "right";
-            chatBox.appendChild(message);
-            input.value = "";
-            chatBox.scrollTop = chatBox.scrollHeight;
-
-            fetch('/send_message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': '../../main.py'
-                },
-                body: JSON.stringify({ message: input.value })
-            })
-            .then(response => response.json()) // Traiter la réponse du serveur
-            .then(data => {
-                console.log('Réponse du serveur:', data);
-                const chatBox = document.getElementById('chatBox'); // Assurez-vous que cet élément existe
-        if (chatBox) {
-            const messageElement = document.createElement('div');
-            messageElement.textContent = `Chatbot: ${data.response}`;
-            chatBox.appendChild(messageElement);
+        const input = document.getElementById('messageInput'); // Assurez-vous que l'élément existe
+        const chatBox = document.getElementById('chatBox'); // Zone d'affichage du chat
+    
+        if (!input || !chatBox) {
+            console.error('Erreur : Élément introuvable.');
+            return;
         }
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
-                const chatBox = document.getElementById('chatBox'); // Assurez-vous que cet élément existe
-        if (chatBox) {
-            const messageElement = document.createElement('div');
-            messageElement.textContent = `Chatbot: ${error.response}`;
-            chatBox.appendChild(messageElement);
+    
+        const message = input.value.trim();
+        if (!message) {
+            console.warn('Message vide, envoi annulé.');
+            return;
         }
-            });
-        }
-
+    
+        // Afficher immédiatement le message de l'utilisateur
+        const userMessage = document.createElement('div');
+        userMessage.textContent = `Vous : ${message}`;
+        userMessage.style.color = "blue"; // Optionnel : pour différencier
+        chatBox.appendChild(userMessage);
+    
+        fetch('/send_message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: message })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erreur HTTP: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Réponse du serveur:', data);
+    
+            // Afficher la réponse du chatbot
+            const botMessage = document.createElement('div');
+            botMessage.textContent = `Chatbot: ${data.response}`;
+            botMessage.style.color = "green"; // Optionnel : pour différencier
+            chatBox.appendChild(botMessage);
+        })
+        .catch(error => {
+            console.error('Erreur:', error.message);
+    
+            // Afficher l'erreur dans l'interface utilisateur
+            const errorMessage = document.createElement('div');
+            errorMessage.textContent = `Chatbot: Erreur de connexion (${error.message})`;
+            errorMessage.style.color = "red"; // Optionnel : pour mettre en évidence
+            chatBox.appendChild(errorMessage);
+        });
+    
+        input.value = ''; // Réinitialiser le champ après envoi
     }
+    
 
     function toggleChat() {
         let img = document.getElementById("img-chat");
