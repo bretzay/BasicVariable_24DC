@@ -166,6 +166,12 @@ function showNetworkStatus(message, type) {
             })
             .catch(error => {
                 console.error('Erreur:', error);
+                const chatBox = document.getElementById('chatBox'); // Assurez-vous que cet élément existe
+        if (chatBox) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = `Chatbot: ${error.response}`;
+            chatBox.appendChild(messageElement);
+        }
             });
         }
 
