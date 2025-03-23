@@ -131,9 +131,10 @@ function showNetworkStatus(message, type) {
     let isMinimized = true; // Par défaut, chatbox fermée
 
     function sendMessage() {
-        const input = document.getElementById('messageInput'); // Assurez-vous que l'élément existe
-        const chatBox = document.getElementById('chatBox'); // Zone d'affichage du chat
-    
+        let input = document.getElementById("user-input");
+        let chatBox = document.getElementById("chat-box");
+
+
         if (!input || !chatBox) {
             console.error('Erreur : Élément introuvable.');
             return;
@@ -185,7 +186,6 @@ function showNetworkStatus(message, type) {
     
         input.value = ''; // Réinitialiser le champ après envoi
     }
-    
 
     function toggleChat() {
         let img = document.getElementById("img-chat");
