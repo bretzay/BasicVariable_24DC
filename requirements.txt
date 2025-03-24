@@ -4,3 +4,4 @@ requests
 langchain
 langchain-core
 langgraph
+langchain_mistralai
